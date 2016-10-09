@@ -51,6 +51,11 @@ namespace Treehouse.FitnessFrog.Controllers
         [HttpPost]
         public ActionResult Add(Entry entry)
         {
+            if (ModelState.IsValid)
+            {
+                _entriesRepository.AddEntry(entry);
+                //TODO Display the Entries list page
+            }
             //Model binding occurs and Request Form Field names are matched to variables above
             //Uses Model state in html form helpers 
             //DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes
