@@ -54,7 +54,7 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.AddEntry(entry);
-                //TODO Display the Entries list page
+                return RedirectToAction("Index"); 
             }
             //Model binding occurs and Request Form Field names are matched to variables above
             //Uses Model state in html form helpers 
