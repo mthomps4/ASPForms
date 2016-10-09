@@ -45,7 +45,7 @@ namespace Treehouse.FitnessFrog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(string date, string activityId, string duration, string intensity, string exclude, string notes)
+        public ActionResult Add(DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes)
         {
             //Model binding occurs and Request Form Field names are matched to variables above
             //Return Values to form for form validation 
