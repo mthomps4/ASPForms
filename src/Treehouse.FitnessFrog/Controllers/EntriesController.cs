@@ -45,6 +45,10 @@ namespace Treehouse.FitnessFrog.Controllers
             {
                 Date = DateTime.Today
             };
+
+            ViewBag.ActivitiesSelectListItems = new SelectList(
+                Data.Data.Activities, "Id", "Name");
+
             return View(entry);
         }
 
@@ -60,6 +64,10 @@ namespace Treehouse.FitnessFrog.Controllers
             //Uses Model state in html form helpers 
             //DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes
             //Above replaced with Entry entry 
+
+            ViewBag.ActivitiesSelectListItems = new SelectList(
+                 Data.Data.Activities, "Id", "Name");
+
             return View(entry);
         }
 
