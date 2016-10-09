@@ -41,15 +41,21 @@ namespace Treehouse.FitnessFrog.Controllers
 
         public ActionResult Add()
         {
-            return View();
+            var entry = new Entry()
+            {
+                Date = DateTime.Today
+            };
+            return View(entry);
         }
 
         [HttpPost]
-        public ActionResult Add(DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes)
+        public ActionResult Add(Entry entry)
         {
             //Model binding occurs and Request Form Field names are matched to variables above
             //Uses Model state in html form helpers 
-            return View();
+            //DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes
+            //Above replaced with Entry entry 
+            return View(entry);
         }
 
         public ActionResult Edit(int? id)
