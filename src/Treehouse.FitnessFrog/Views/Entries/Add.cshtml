@@ -8,11 +8,12 @@
 
 <h2>@ViewBag.Title</h2>
 
-@Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" } )
-@*pass true to only show Global messages.*@ 
-
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+    @*pass true to only show Global messages.*@
+    //pass Validation inside form for Client Side 
+
 
     <div class="row">
 
