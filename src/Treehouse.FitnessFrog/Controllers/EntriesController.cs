@@ -76,12 +76,11 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.AddEntry(entry);
+
+                TempData["Message"] = "Your Entry was successfully added.";
+
                 return RedirectToAction("Index");
             }
-            //Model binding occurs and Request Form Field names are matched to variables above
-            //Uses Model state in html form helpers 
-            //DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes
-            //Above replaced with Entry entry 
 
             SetupActivitiesSelectListItems();
 
@@ -118,6 +117,7 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.UpdateEntry(entry);
+                TempData["Message"] = "Your Entry was successfully updated.";
                 return RedirectToAction("Index");
             }
             SetupActivitiesSelectListItems();
@@ -149,6 +149,7 @@ namespace Treehouse.FitnessFrog.Controllers
         {
             //Delete Entry 
             _entriesRepository.DeleteEntry(id);
+            TempData["Message"] = "Your Entry was successfully deleted.";
 
             //Redirect to "Entries Index" 
             return RedirectToAction("Index"); 
